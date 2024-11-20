@@ -113,6 +113,7 @@ fun RencanaStudyView(
                     label = "Mata Kuliah",
                     onValueChangeEvent = {chosenDropdown = it}
                 )
+                Spacer(modifier = Modifier.padding(8.dp))
 
             }
         }
