@@ -146,6 +146,7 @@ fun RencanaStudyView(
                     }
 
                 }
+                Spacer(modifier = Modifier.padding(8.dp))
             }
         }
     }
