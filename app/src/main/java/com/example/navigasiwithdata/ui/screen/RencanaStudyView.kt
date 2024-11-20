@@ -150,6 +150,11 @@ fun RencanaStudyView(
                 HorizontalDivider()
                 Spacer(modifier = Modifier.padding(8.dp))
                 Text(text = "Klausul Persetujuan Mahasiswa", fontWeight = FontWeight.Bold)
+                Text(
+                    text = "Saya menyetujui setiap pernyataan yang ada tanpa paksaan dari pihak manapun",
+                    fontSize = 10.sp,
+                    fontWeight = FontWeight.Light
+                )
             }
         }
     }
