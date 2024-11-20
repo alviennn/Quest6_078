@@ -2,6 +2,7 @@ package com.example.navigasiwithdata.navigation
 
 import android.widget.MediaController
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -24,4 +25,5 @@ fun MahasiswaApp(
     krsViewModel: RencanaStudyViewModel = viewModel(),
     navController: NavHostController = rememberNavController()
 ) {
+    val mahasiswaUiState = mahasiswaViewModel.mahasiswaUiState.collectAsState().value
 }
