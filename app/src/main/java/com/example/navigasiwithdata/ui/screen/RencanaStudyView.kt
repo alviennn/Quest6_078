@@ -98,6 +98,7 @@ fun RencanaStudyView(
                     .fillMaxSize()
                     .padding(16.dp)
             ){
+                Text(text = "Pilih Mata Kuliah Peminatan", fontWeight = FontWeight.Bold)
 
             }
         }
