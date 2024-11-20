@@ -1,6 +1,7 @@
 package com.example.navigasiwithdata.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
+import com.example.navigasiwithdata.data.RuangKelas
 import com.example.navigasiwithdata.model.RencanaStudy
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -12,6 +13,12 @@ class RencanaStudyViewModel : ViewModel() {
 }
 
 fun setMataKuliah(mkPilihan: String){
-    _krsState.update {stateKelas -> stateMK.copy(namaMK = mkPilihan)}
+    _krsState.update {stateMK -> stateMK.copy(namaMK = mkPilihan)}
 }
+
+fun setKelas(kelasPilihan: String){
+    _krsState.update {stateKelas -> stateKelas.copy(RuangKelas = kelasPilihan)}
+}
+
+
 
