@@ -43,6 +43,13 @@ fun RencanaStudyView(
             .fillMaxSize()
             .background(color = colorResource(id = R.color.primary))
     ){
-
+        Image(
+            painter = painterResource(id = R.drawable.foto),
+            contentDescription = "",
+            modifier = Modifier
+                .clip(shape = CircleShape)
+                .size(50.dp)
+        )
+        Spacer(modifier = Modifier.padding(start = 16.dp))
     }
 }
