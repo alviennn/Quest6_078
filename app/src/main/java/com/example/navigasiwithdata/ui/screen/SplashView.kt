@@ -24,19 +24,21 @@ import com.example.navigasiwithdata.R
 @Preview(showBackground = true)
 @Composable
 fun SplashView(onMulaiButton: () -> Unit) {
-    Column(modifier = Modifier
-        .fillMaxSize()
-        .background(color = colorResource(R.color.primary)),
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(color = colorResource(R.color.primary)),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        Image(painter = painterResource(R.drawable.logoumy),
+        Image(
+            painter = painterResource(R.drawable.logoumy),
             contentDescription = null,
             modifier = Modifier.size(180.dp)
         )
         Spacer(modifier = Modifier.padding(16.dp))
         Button(
-            onClick = {}
+            onClick = {onMulaiButton()}
         ) {
             Text("Mulai")
         }

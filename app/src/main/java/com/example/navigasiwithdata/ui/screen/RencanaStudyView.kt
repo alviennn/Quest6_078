@@ -16,6 +16,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Notifications
 import androidx.compose.material3.Button
+import androidx.compose.material3.Checkbox
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.RadioButton
@@ -62,27 +63,34 @@ fun RencanaStudyView(
             .fillMaxSize()
             .background(color = colorResource(id = R.color.primary))
     ){
-        Image(
-            painter = painterResource(id = R.drawable.foto),
-            contentDescription = "",
+        Row (
             modifier = Modifier
-                .clip(shape = CircleShape)
-                .size(50.dp)
-        )
-        Spacer(modifier = Modifier.padding(start = 16.dp))
-        Column (modifier = Modifier.weight(1f)){
-            Text(
-                text = mahasiswa.nama,
-                fontWeight = FontWeight.Bold,
-                fontSize = 15.sp,
-                color = Color.White
+                .fillMaxWidth()
+                .padding(20.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ){
+            Image(
+                painter = painterResource(id = R.drawable.foto3x4),
+                contentDescription = "",
+                modifier = Modifier
+                    .clip(shape = CircleShape)
+                    .size(100.dp)
             )
-            Text(
-                text = mahasiswa.nim,
-                fontWeight = FontWeight.Bold,
-                fontSize = 12.sp,
-                color = Color.White
-            )
+            Spacer(modifier = Modifier.padding(start = 16.dp))
+            Column (modifier = Modifier.weight(1f)){
+                Text(
+                    text = mahasiswa.nama,
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 20.sp,
+                    color = Color.White
+                )
+                Text(
+                    text = mahasiswa.nim,
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 15.sp,
+                    color = Color.White
+                )
+            }
             Box{
                 Icon(
                     imageVector = Icons.Filled.Notifications,
@@ -119,7 +127,9 @@ fun RencanaStudyView(
                     selectedValue = chosenDropdown,
                     options = MataKuliah.options,
                     label = "Mata Kuliah",
-                    onValueChangeEvent = {chosenDropdown = it}
+                    onValueChangeEvent = {
+                        chosenDropdown = it
+                    }
                 )
                 Spacer(modifier = Modifier.padding(8.dp))
                 HorizontalDivider()
@@ -151,24 +161,37 @@ fun RencanaStudyView(
                 HorizontalDivider()
                 Spacer(modifier = Modifier.padding(8.dp))
                 Text(text = "Klausul Persetujuan Mahasiswa", fontWeight = FontWeight.Bold)
-                Text(
-                    text = "Saya menyetujui setiap pernyataan yang ada tanpa paksaan dari pihak manapun",
-                    fontSize = 10.sp,
-                    fontWeight = FontWeight.Light
-                )
-            }
-            Spacer(modifier = Modifier.padding(8.dp))
-            Row (
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceEvenly
-            ){
-                Button(onClick = {onBackButtonClicked()}) {
-                    Text(text = "Kembali")
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    modifier = Modifier.padding(8.dp)
+                ) {
+                    Checkbox(
+                        checked = checked,
+                        onCheckedChange = { checked = it },
+                        enabled = chosenDropdown.isNotBlank() && pilihanKelas.isNotBlank()
+                    )
+                    Text(
+                        text = "Saya menyetujui setiap pernyataan yang ada tanpa paksaan dari pihak manapun",
+                        fontSize = 10.sp,
+                        fontWeight = FontWeight.Light,
+                        modifier = Modifier.padding(start = 8.dp)
+                    )
                 }
-                Button(onClick = {onSubmitButtonClicked(listData)}, enabled = checked) {
-                    Text(text = "Lanjut")
+                Spacer(modifier = Modifier.padding(16.dp))
+                Row (
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceEvenly
+                ){
+                    Button(onClick = {onBackButtonClicked()}) {
+                        Text(text = "Kembali")
+                    }
+                    Button(onClick = {onSubmitButtonClicked(listData)}, enabled = checked) {
+                        Text(text = "Lanjut")
+                    }
                 }
+
             }
+
         }
     }
 }
