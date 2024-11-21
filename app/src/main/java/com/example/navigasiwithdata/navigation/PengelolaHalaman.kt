@@ -1,15 +1,17 @@
 package com.example.navigasiwithdata.navigation
 
-import android.widget.MediaController
 import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.navigasiwithdata.ui.screen.MahasiswaFormView
+import com.example.navigasiwithdata.ui.screen.RencanaStudyView
+import com.example.navigasiwithdata.ui.screen.SplashView
 import com.example.navigasiwithdata.ui.viewmodel.MahasiswaViewModel
 import com.example.navigasiwithdata.ui.viewmodel.RencanaStudyViewModel
 
@@ -33,6 +35,13 @@ fun MahasiswaApp(
         startDestination = Halaman.Splash.name,
         modifier = Modifier.padding()
     ) {
+        composable(route = Halaman.Splash.name){
+            SplashView(onMulaiButton = {
+                navController.navigate(
+                    Halaman.Mahasiswa.name
+                )
+            })
+        }
 
     }
 }
