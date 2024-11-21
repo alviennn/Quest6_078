@@ -1,3 +1,5 @@
+@file:Suppress("PreviewAnnotationInFunctionWithParameters")
+
 package com.example.navigasiwithdata.ui.screen
 
 import androidx.compose.foundation.Image
@@ -21,7 +23,7 @@ import com.example.navigasiwithdata.R
 
 @Preview(showBackground = true)
 @Composable
-fun SplashView() {
+fun SplashView(onMulaiButton: () -> Unit) {
     Column(modifier = Modifier
         .fillMaxSize()
         .background(color = colorResource(R.color.primary)),
