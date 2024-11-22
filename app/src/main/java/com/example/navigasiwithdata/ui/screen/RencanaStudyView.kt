@@ -63,10 +63,11 @@ fun RencanaStudyView(
             .fillMaxSize()
             .background(color = colorResource(id = R.color.primary))
     ){
+        Spacer(modifier = Modifier.padding(25.dp))
         Row (
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(20.dp),
+                .padding(10.dp),
             verticalAlignment = Alignment.CenterVertically
         ){
             Image(
@@ -74,7 +75,7 @@ fun RencanaStudyView(
                 contentDescription = "",
                 modifier = Modifier
                     .clip(shape = CircleShape)
-                    .size(100.dp)
+                    .size(80.dp)
             )
             Spacer(modifier = Modifier.padding(start = 16.dp))
             Column (modifier = Modifier.weight(1f)){

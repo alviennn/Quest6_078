@@ -67,7 +67,7 @@ fun MahasiswaFormView(
             ),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Spacer(modifier = Modifier.padding(16.dp))
+        Spacer(modifier = Modifier.padding(25.dp))
         Row(
             verticalAlignment = Alignment.CenterVertically,
         ) {

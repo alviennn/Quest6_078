@@ -27,6 +27,9 @@ class RencanaStudyViewModel : ViewModel() {
         )}
 
     }
+    fun resetData() {
+        _krsState.value = RencanaStudy()
+    }
 }
 
 

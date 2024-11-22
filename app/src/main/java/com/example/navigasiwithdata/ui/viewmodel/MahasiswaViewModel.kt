@@ -26,4 +26,7 @@ class MahasiswaViewModel : ViewModel() {
             )
         }
     }
+    fun resetData() {
+        _mahasiswaStateUI.value = Mahasiswa()
+    }
 }
